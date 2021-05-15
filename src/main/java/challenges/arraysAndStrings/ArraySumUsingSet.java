@@ -31,7 +31,7 @@ public class ArraySumUsingSet {
                 System.out.printf("(%d, %d) %n", value, target);
             }
         }
-
+        System.out.println(set);
     } /* * Utility method to find two elements in an array that sum to k. */
 
     public static void prettyPrint(int[] random, int k) {

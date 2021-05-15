@@ -118,4 +118,15 @@ public class LinkedListTest {
         linkedList.print();
     }
 
+    @Test
+    public void testDeepCopy()
+    {
+        linkedList.addBack(1);
+        linkedList.addBack(2);
+        linkedList.addBack(3);
+        //TODO 1->2->3-->null
+        Assert.assertEquals(3, linkedList.size());
+        Assert.assertEquals(3,linkedList.deepCopy().size());
+    }
+
 }

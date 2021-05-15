@@ -14,7 +14,7 @@ public class DynamicArrayTest {
     }
 
     @Test
-    public void GetAndSet() {
+    public void SetandGet() {
         array.set(0, "a");
         Assert.assertEquals("a", array.get(0));
     }
@@ -77,14 +77,14 @@ public class DynamicArrayTest {
     }
 
     @Test
-    public void isEmpty() {
+    public void testIsEmpty() {
         Assert.assertTrue(array.isEmpty());
         array.add("a");
         Assert.assertFalse(array.isEmpty());
     }
 
     @Test
-    public void Contains()  {
+    public void testContains()  {
         Assert.assertFalse(array.Contains("a"));
         array.add("a");
         Assert.assertTrue(array.Contains("a"));

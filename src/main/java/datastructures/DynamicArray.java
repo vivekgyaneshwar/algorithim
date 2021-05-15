@@ -1,5 +1,6 @@
 package datastructures;
 
+//this class holds and array and supports different operations in the array
 public class DynamicArray<String> {
 
     private Object[] data;
@@ -25,7 +26,7 @@ public class DynamicArray<String> {
         data[index] = value;
     }
 
-    //O(n) might add some time for resize
+    //O(n) might add some time for resize at a particular index
     public void insert(int index, String value) {
 
         // Check size
@@ -46,19 +47,7 @@ public class DynamicArray<String> {
     //
     // You try
     // Try implementing delete, isEmpty, and Contains on your own.
-    // You can find the solution at the bottom
 
-    /*
-    public void delete(int index) {
-    }
-
-    public boolean isEmpty() {
-
-    }
-
-    public boolean Contains(String value) {
-    }
-    */
 
     private void resize() {
         Object[] newData = new Object[initialCapacity * 2];
@@ -110,6 +99,7 @@ public class DynamicArray<String> {
 
     //O(n)
     public boolean Contains(String value) {
+        //linear search O(n)
         for (int i = 0; i <= size -  1; i++) {
             String currentValue = (String)data[i];
             if (currentValue.equals(value)) {

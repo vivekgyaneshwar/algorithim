@@ -6,14 +6,15 @@ class Main {
         // create an array
         int[] age = {12, 4, 5, 2, 5};
 
-        // access each array elements
+        // access each array elements O(1)
         System.out.println("Accessing Elements of Array:");
         System.out.println("First Element: " + age[0]);
         System.out.println("Second Element: " + age[1]);
-        //loopOnArray(age);
+        System.out.println("Last Element: " + age[4]);
+        loopOnArray(age);
 
-        sumAverageArray();
-        create2DArray();
+//        sumAverageArray();
+//        create2DArray();
     }
 
     private static void create2DArray() {
@@ -24,7 +25,7 @@ class Main {
                 {7},
         };
 
-        // calculate the length of each row
+        // calculate the length of each row -O(n^2) lenght?
         System.out.println("Length of row 1: " + a[0].length);
         for (int i = 0; i < a.length; ++i) {
             for(int j = 0; j < a[i].length; ++j) {
@@ -57,7 +58,7 @@ class Main {
 
     private static void loopOnArray(int[] age) {
         // loop through the array
-        // using for loop
+        // using for loop -O(n)
         System.out.println("Using for Loop:");
         for(int i = 0; i < age.length; i++) {
             System.out.println(age[i]);

@@ -55,27 +55,41 @@ public class BigO {
     }
 
     public static void main(String[] args) {
-        int n = 1000;
-        //linearComplexity(n);
-        //logarathimComplexity(n);
+        int n = 100;
+//        constantComplexity(n);
+//        linearComplexity(n);
+//        logNComplexity(n);
         //nLogNComplexity(n);
-        //polynomialComplexity(8);
-        //exponentialComplexity(5);
+//        polynomialComplexity(8);
+//        exponentialComplexity(6);
         factorialComplexity(n);
+    }
 
+    private static void linearComplexity(int n) {
+
+        int m = n-2;
+        //O(n)
+        for (int i = 0; i < n; i++) {
+            System.out.println(i);
+        }
+        ////O(m)
+        for (int i = 0; i < m; i++) {
+            System.out.println(i);
+        }
     }
 
     private static void factorialComplexity(int n) {
         //In most cases, this is pretty much as bad as it'll get.
         // This class of algorithms has a run time proportional to the factorial of the input size.
         //example of this is solving the traveling salesman problem using a brute-force approach to solve it.
-
+        //4*3*2*1=24
         for (int i = 1; i <= factorial(4); i++){
             System.out.println("Hey - I'm busy looking at: " + i);
         }
     }
 
     private static int factorial(int n) {
+        //exit condition
         if (n == 0)
             return 1;
         else
@@ -86,19 +100,28 @@ public class BigO {
         //Now we are getting into dangerous territory; these algorithms grow in proportion to some factor
         // exponentiated by the input size. O(2^n) algorithms double with every additional input.
         //O(3^n) algorithms triple with every additional input, O(kn) algorithms will get k times bigger with every additional input.
-
-        for (int i = 1; i <= Math.pow(2, n); i++){
-            System.out.println("Hey - I'm busy looking at: " + i);
+        int count=0;
+        for (int i = 1; i <= Math.pow(3, n); i++){
+//            System.out.println("Hey - I'm busy looking at: " + i);
+            count++;
         }
+        System.out.println(count);
     }
 
     private static void polynomialComplexity(int n) {
-        //quadratic O(n^2) is faster than O(n3) which is faster than O(n4), etc.
-        for (int i = 1; i <= n; i++) {
-            for(int j = 1; j <= n; j++) {
-                System.out.println("Hey - I'm busy looking at: " + i + " and " + j);
+        //quadratic O(n^2) is faster than O(n^3) which is faster than O(n^4), ..O(n^n)etc.
+        int count = 0;
+        for (int i = 1; i <=n; i++) {
+            count++;
+            for(int j = 1; j <=n; j++) {
+                count++;
+                for(int k = 1; k < n; k++) {
+                    count++;
+                    //System.out.println("Hey - I'm busy looking at: " + i + " and " + j);
+                }
             }
         }
+        System.out.println("total iterations--"+count);
     }
 
     private static void nLogNComplexity(int n) {
@@ -117,7 +140,7 @@ public class BigO {
         }
     }
 
-    private static int linearComplexity(int n) {
+    private static int constantComplexity(int n) {
         //example is also constant time. Even if it takes 3 times as long to run, it doesn't depend on the size of the
         // input, n. We denote constant time algorithms as follows: O(1). Note that O(2), O(3) or even O(1000)
         // would mean the same thing.

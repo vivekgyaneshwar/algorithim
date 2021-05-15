@@ -133,4 +133,15 @@ public class LinkedList {
         System.out.println("");
     }
 
+    public LinkedList deepCopy()
+    {
+        LinkedList target = new LinkedList();
+        Node node;
+        Node current = this.head;
+        while (current != null) {
+            target.addBack(current.data);
+            current = current.next;
+        }
+        return target;
+    }
 }
