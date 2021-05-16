@@ -13,6 +13,11 @@ class MaxAreaIcelandMAtrix {
                 + area(r, c-1) + area(r, c+1));
     }
 
+    /*
+    Time Complexity: O(R*C)O(R∗C), where RR is the number of rows in the given grid, and CC is the number of columns. We visit every square once.
+
+    Space complexity: O(R*C)O(R∗C), the space used by seen to keep track of visited squares, and the space used by the call stack during our recursion.
+     */
     public int maxAreaOfIsland(int[][] grid) {
         this.grid = grid;
         seen = new boolean[grid.length][grid[0].length];
