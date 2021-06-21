@@ -22,8 +22,11 @@ public class MaxAreaIcelandMAtrixTest {
 
     @Test
     public void maxAreaOfIsland() {
+        //1-row grid
         int[][] grid ={{0,0,0,0,0,0,0,0}};
         Assert.assertEquals(0,maxAreaIcelandMAtrix.maxAreaOfIsland(grid));
+
+        //8-row 13-col grid
         int[][] grid1 = {{0,0,1,0,0,0,0,1,0,0,0,0,0},{0,0,0,0,0,0,0,1,1,1,0,0,0},
                 {0,1,1,0,1,0,0,0,0,0,0,0,0},{0,1,0,0,1,1,0,0,1,0,1,0,0},
                 {0,1,0,0,1,1,0,0,1,1,1,0,0},{0,0,0,0,0,0,0,0,0,0,1,0,0},
